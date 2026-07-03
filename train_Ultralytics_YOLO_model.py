@@ -1,10 +1,15 @@
-"""Train an Ultralytics YOLO model for the Tiger Watch project."""
+"""Train an Ultralytics YOLO model for the Tiger Watch project.
+Ref: https://docs.ultralytics.com/datasets#object-detection
+Ref: https://hub.docker.com/r/ultralytics/ultralytics
+"""
 
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 from typing import Any
+
+from ultralytics import settings
 
 
 def parse_args() -> argparse.Namespace:
@@ -91,6 +96,7 @@ def train_model(args: argparse.Namespace) -> Any:
 
 
 def main() -> None:
+    print("Current ultralytics settings...", settings)
     args = parse_args()
     train_model(args)
 
