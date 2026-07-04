@@ -24,6 +24,14 @@ Hardware:
 
 Install dependencies:
 
+
+# in terminal without pycharm
+```bash
+python -m venv .venv
+source .venv/bin/activate            # Linux/macOS
+python --version                     # confirm 3.9+
+```
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -37,4 +45,7 @@ Train a YOLO model:
 ```bash
 python train_Ultralytics_YOLO_model.py --data path/to/dataset.yaml
 ```
+
+
+#To access environment with ultralytics and torch in terminal: source .venv/bin/activate
 
