@@ -26,7 +26,7 @@ Hardware:
  
 
 
-## Environment setup 
+## Environment setup for model training
 Venv setup in terminal  
 ```bash
 python -m venv .venv
