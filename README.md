@@ -91,9 +91,9 @@ Dataset management: Voxel51 | https://docs.voxel51.com/index.html#
 Using FiftyOne API we download datasets, split to "train" and "val", create YOLO friendly YAML 
 Define variables in the header of the script before run, i.e.:
 ```
-    DATASET_NAME = "my_wildlife_dataset"
-    EXPORT_DIR = "/home/shon/Sandbox/datasets/YOLO_wildlife"
-    CLASSES = ["Person", "Dog", "Cat", "Tiger", "Bird", "Snake", "Bear"]
+DATASET_NAME = "my_wildlife_dataset"
+EXPORT_DIR = "/home/shon/Sandbox/datasets/YOLO_wildlife"
+CLASSES = ["Person", "Dog", "Cat", "Tiger", "Bird", "Snake", "Bear"]
 ```
 ```bash
 python 51_dataset_to_YAML.py
