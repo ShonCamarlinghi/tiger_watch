@@ -42,7 +42,7 @@ $ pip install ultralytics installs following:
 - Yolo command-line tool
 - a pinned PyTorch matching your platform
 
-To access environment with ultralytics and torch in terminal: 
+To access environment with ultralytics and torch: 
 ```bash
 source .venv/bin/activate
 ```
