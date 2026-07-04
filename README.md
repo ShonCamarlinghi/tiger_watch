@@ -9,6 +9,7 @@ and resource-constrained edge deployment (**NVIDIA Jetson AGX Xavier**) using **
 Computer Vision Task: Object detection and classify: 
     animal vs object, if animal: animal.type(wild, pet, human, bird), 
     if animal.type(pet): classify dog(breed) or cat(breed).
+    if animal.type(wild): classify wild.kind(tiger, bear, hawk, etc.)
 Classes: animal (background = no label), human, pet, dog, cat. 
 
 Success metric: 
