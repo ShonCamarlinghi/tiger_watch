@@ -21,26 +21,34 @@ Hardware:
                   Intel RealSense camera
 
 
-## Training
-
-Install dependencies:
 
 
-# in terminal without pycharm
+ 
+
+
+# Environment setup 
+Venv setup in terminal  
 ```bash
 python -m venv .venv
 source .venv/bin/activate            # Linux/macOS
-python --version                     # confirm 3.9+
+python --version                     # confirm 3.9+  
 ```
 
 ```bash
 pip install -r requirements.txt
 ```
-pip install ultralytics installs: 
-- ultralytics python package
+$ pip install ultralytics installs following: 
+- ultralytics python package (up to version 12 currently supported)
 - Yolo command-line tool
 - a pinned PyTorch matching your platform
 
+To access environment with ultralytics and torch in terminal: 
+```bash
+source .venv/bin/activate
+```
+
+
+## Training 
 Train a YOLO model:
 
 ```bash
@@ -48,5 +56,5 @@ python train_Ultralytics_YOLO_model.py --data path/to/dataset.yaml
 ```
 
 
-#To access environment with ultralytics and torch in terminal: source .venv/bin/activate
+
 
