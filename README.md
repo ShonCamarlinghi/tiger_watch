@@ -26,7 +26,7 @@ Hardware:
  
 
 
-## Environment setup for model training
+### Environment setup for model training
 Venv setup in terminal  
 ```bash
 python -m venv .venv
@@ -47,7 +47,7 @@ To access environment with ultralytics and torch:
 source .venv/bin/activate
 ```
 
-## yolo check
+#### yolo check
 (.venv) (base) shon@s2:~/PycharmProjects/tiger_watch$ yolo check
 Ultralytics 8.4.82 🚀 Python-3.12.3 torch-2.12.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Ti, 7806MiB)
 Setup complete ✅ (16 CPUs, 31.0 GB RAM, 292.6/914.8 GB disk)
@@ -80,13 +80,13 @@ nvidia-ml-py           ✅ 13.610.43>=12.0.0
 ultralytics-thop       ✅ 2.0.20>=2.0.18
 (.venv) (base) shon@s2:~/PycharmProjects/tiger_watch$ 
 
-## Inference sanity
+#### Inference sanity
 ```bash
 yolo predict model=yolo26n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
 
 
-## Training 
+### Training 
 Train a YOLO model:
 
 ```bash
