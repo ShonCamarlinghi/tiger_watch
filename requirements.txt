@@ -1,4 +1,4 @@
 ultralytics
 flask
-torch
-
+fiftyone
+protobuf>=6.33.6,<7

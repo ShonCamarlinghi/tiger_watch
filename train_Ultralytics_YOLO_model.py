@@ -4,13 +4,11 @@ Ref: https://hub.docker.com/r/ultralytics/ultralytics
 """
 
 from __future__ import annotations
-
 import argparse
 from pathlib import Path
 from typing import Any
-
 from ultralytics import settings
-
+#from ultralytics.yolo.utils.torch_utils import select_device
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
