@@ -80,6 +80,11 @@ nvidia-ml-py           ✅ 13.610.43>=12.0.0
 ultralytics-thop       ✅ 2.0.20>=2.0.18
 (.venv) (base) shon@s2:~/PycharmProjects/tiger_watch$ 
 
+## Inference sanity
+```bash
+yolo predict model=yolo26n.pt source='https://ultralytics.com/images/bus.jpg'
+```
+
 
 ## Training 
 Train a YOLO model:
