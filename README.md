@@ -37,7 +37,7 @@ python --version                     # confirm 3.9+
 ```bash
 pip install -r requirements.txt
 ```
-$ pip install ultralytics installs following: 
+"pip install ultralytics" gets you following: 
 - ultralytics python package (up to version 12 currently supported)
 - Yolo command-line tool
 - a pinned PyTorch matching your platform
