@@ -15,18 +15,16 @@ Classes: animal (background = no label), human, pet, dog, cat.
 Success metric: 
 
 Hardware: 
-    - training: AMD Ryzen 7, NVIDIA RTX 4090
+    - training: AMD Ryzen 7, NVIDIA RTX 4060ti
     - deployment: NVIDIA Jetson AGX Xavier,  
                   wifi adapter  
                   Intel RealSense camera
 
 
+Dataset source : Open Images Dataset v7 from Google | https://storage.googleapis.com/openimages/web/download_v7.html  
+Dataset management: Voxel51 | https://docs.voxel51.com/index.html#
 
-
- 
-
-
-### Environment setup for model training
+### SW Environment setup for model training
 Venv setup in terminal  
 ```bash
 python -m venv .venv
@@ -84,7 +82,38 @@ ultralytics-thop       ✅ 2.0.20>=2.0.18
 ```bash
 yolo predict model=yolo26n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
+### FiftyOne downloads and prepare dataset.
 
+
+Dataset source : Open Images Dataset v7 from Google | https://storage.googleapis.com/openimages/web/download_v7.html  
+Dataset management: Voxel51 | https://docs.voxel51.com/index.html#
+Using FiftyOne API we download datasets, split to "train" and "val", create YOLO friendly YAML 
+Define variables in the header of the script before run, i.e.:
+    DATASET_NAME = "my_wildlife_dataset"
+    EXPORT_DIR = "/home/shon/Sandbox/datasets/YOLO_wildlife"
+    CLASSES = ["Person", "Dog", "Cat", "Tiger", "Bird", "Snake", "Bear"]
+
+```bash
+python 51_dataset_to_YAML.py
+```
+This script creates dataset.yaml and images and labels folders in EXPORT_DIR
+```
+(.venv) (base) shon@s2:~/PycharmProjects/tiger_watch$ ls /home/shon/Sandbox/datasets/YOLO_wildlife
+dataset.yaml  images  labels
+```
+Content of created dataset.yaml:
+```
+names:
+  0: Person
+  1: Dog
+  2: Cat
+  3: Tiger
+  4: Bird
+  5: Snake
+  6: Bear
+path: /home/shon/Sandbox/datasets/YOLO_wildlife
+val: ./images/val/
+```
 
 ### Training 
 Train a YOLO model:
