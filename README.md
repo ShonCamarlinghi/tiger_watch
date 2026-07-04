@@ -46,6 +46,7 @@ source .venv/bin/activate
 ```
 
 #### yolo check
+```
 (.venv) (base) shon@s2:~/PycharmProjects/tiger_watch$ yolo check
 Ultralytics 8.4.82 🚀 Python-3.12.3 torch-2.12.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Ti, 7806MiB)
 Setup complete ✅ (16 CPUs, 31.0 GB RAM, 292.6/914.8 GB disk)
@@ -77,6 +78,7 @@ polars                 ✅ 1.42.0>=0.20.0
 nvidia-ml-py           ✅ 13.610.43>=12.0.0
 ultralytics-thop       ✅ 2.0.20>=2.0.18
 (.venv) (base) shon@s2:~/PycharmProjects/tiger_watch$ 
+```
 
 #### Inference sanity
 ```bash
@@ -84,15 +86,15 @@ yolo predict model=yolo26n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
 ### FiftyOne downloads and prepare dataset.
 
-
 Dataset source : Open Images Dataset v7 from Google | https://storage.googleapis.com/openimages/web/download_v7.html  
 Dataset management: Voxel51 | https://docs.voxel51.com/index.html#
 Using FiftyOne API we download datasets, split to "train" and "val", create YOLO friendly YAML 
 Define variables in the header of the script before run, i.e.:
+```
     DATASET_NAME = "my_wildlife_dataset"
     EXPORT_DIR = "/home/shon/Sandbox/datasets/YOLO_wildlife"
     CLASSES = ["Person", "Dog", "Cat", "Tiger", "Bird", "Snake", "Bear"]
-
+```
 ```bash
 python 51_dataset_to_YAML.py
 ```
