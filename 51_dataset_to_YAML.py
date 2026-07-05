@@ -5,7 +5,7 @@ import fiftyone.utils.random as four
 
 DATASET_NAME = "my_wildlife_dataset"
 EXPORT_DIR = "/home/shon/Sandbox/datasets/YOLO_wildlife"
-CLASSES = ["Person", "Dog", "Cat", "Tiger", "Bird", "Snake", "Bear"]
+CLASSES = ["Dog", "Cat", "Tiger", "Bird", "Snake", "Bear"]
 
 
 # 1. Load virtual container if the persistent dataset already exists; otherwise download it.
@@ -19,7 +19,7 @@ else:
         classes=CLASSES,
         label_types=["detections"],
         label_field="ground_truth",
-        max_samples=4000,
+        max_samples=20000,
         dataset_name=DATASET_NAME,
         persistent=True,
     )
@@ -41,20 +41,19 @@ four.random_split(
     seed=42
 )
 
-# 5. Safe multi-split dictionary mapping
-split_dict = {
-    "train": dataset.match_tags("train"),
-    "val": dataset.match_tags("val")
-}
+# 5. Export each split in YOLOv5 format. The `split` argument generates the
+# images/, labels/, and dataset.yaml layout expected by YOLOv8/YOLOv9/YOLOv10.
+for split in ("train", "val"):
+    split_view = dataset.match_tags(split)
+    print(f"Exporting {len(split_view)} samples to split '{split}'")
 
-# 6. Export each split in YOLOv5 format: generates the images/, labels/ subfolders and the dataset.yaml file required by YOLOv8, YOLOv9, and YOLOv10.
-fo.types.YOLOv5Dataset.export_dataset(
-    dataset_or_view=split_dict,
-    export_dir=EXPORT_DIR,            # Double-check your path permission
-    label_field="ground_truth",       # Must match step 3
-    classes=class_list,                            # Enforces explicit class indexes
-    overwrite=True                    # Wipes partial folders and builds fresh directories
-)
+    split_view.export(
+        export_dir=EXPORT_DIR,            # Double-check path permission
+        dataset_type=fo.types.YOLOv5Dataset,
+        label_field="ground_truth",       # Must match step 3
+        split=split,
+        classes=CLASSES,               # Enforces explicit class indexes
+        overwrite=(split == "train"),     # Clear stale files once, then add val
+    )
 
 print(f"Dataset exported successfully to {EXPORT_DIR}")
-
