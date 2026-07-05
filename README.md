@@ -95,7 +95,7 @@ DATASET_NAME = "my_wildlife_dataset"
 EXPORT_DIR = "/home/shon/Sandbox/datasets/YOLO_wildlife"
 CLASSES = ["Dog", "Cat", "Tiger", "Bird", "Snake", "Bear"]
 ```
-Due to enourmouse size of open-images dataset, I deliberately avoided default open-images-v7.yaml from Ultralytics https://docs.ultralytics.com/datasets/detect/open-images-v7#applications 
+Due to enormous size of open-images dataset, I deliberately avoided default open-images-v7.yaml from Ultralytics https://docs.ultralytics.com/datasets/detect/open-images-v7#applications 
 Instead I set fiftyOne dataset container small by picking split="validation" and max_samples=20000  and predefined list of CLASSES in my script.
 ```
     dataset = foz.load_zoo_dataset(
