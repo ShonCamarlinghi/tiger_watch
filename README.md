@@ -107,6 +107,7 @@ Instead I set fiftyOne dataset container small by picking split="validation" and
         max_samples=20000,          # Set max samples to 20,000
         dataset_name=DATASET_NAME,
         persistent=True,
+)
 ```
 
 ```bash
@@ -118,7 +119,7 @@ python 51_dataset_to_YAML.py
 dataset.yaml  images  labels
 ```
 dataset.yaml content:
-``
+```
 names:
   0: Dog
   1: Cat
@@ -137,6 +138,7 @@ Train a YOLO model:
 ```bash
 python train_Ultralytics_YOLO_model.py --data path/to/dataset.yaml
 ```
+
 Snapshot of training start:
 ```
 (.venv) (base) shon@s2:~/PycharmProjects/tiger_watch$ python train_Ultralytics_YOLO_model.py --data /home/shon/Sandbox/datasets/YOLO_wildlife/dataset.yaml
