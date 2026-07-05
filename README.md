@@ -232,5 +232,35 @@ Starting training for 100 epochs...
 
 ```
 
+Snapshot of training end:
+```
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+     99/100      2.85G     0.3589     0.3303     0.9722          9        640: 100% ━━━━━━━━━━━━ 200/200 8.7it/s 23.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 25/25 7.1it/s 3.5s
+                   all        800        256      0.894      0.617      0.651      0.474
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+    100/100      2.85G     0.3436     0.3185     0.9588          6        640: 100% ━━━━━━━━━━━━ 200/200 8.7it/s 23.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 25/25 7.1it/s 3.5s
+                   all        800        256      0.889      0.621      0.653       0.47
+
+100 epochs completed in 0.739 hours.
+Optimizer stripped from /home/shon/PycharmProjects/tiger_watch/runs/detect/runs/train/tiger_watch_yolo-5/weights/last.pt, 6.2MB
+Optimizer stripped from /home/shon/PycharmProjects/tiger_watch/runs/detect/runs/train/tiger_watch_yolo-5/weights/best.pt, 6.2MB
+
+Validating /home/shon/PycharmProjects/tiger_watch/runs/detect/runs/train/tiger_watch_yolo-5/weights/best.pt...
+Ultralytics 8.4.82 🚀 Python-3.12.3 torch-2.12.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Ti, 7806MiB)
+Model summary (fused): 73 layers, 3,006,818 parameters, 0 gradients, 8.1 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 25/25 5.9it/s 4.2s
+                   all        800        256      0.831      0.625      0.667      0.516
+                   Dog        132        163      0.897      0.801      0.883      0.695
+                   Cat         15         17      0.851      0.882      0.944       0.79
+                 Tiger          2          3          1          0     0.0124    0.00248
+                  Bird         52         71      0.767      0.521      0.669       0.53
+                 Snake          2          2       0.64       0.92      0.828      0.563
+Speed: 0.1ms preprocess, 1.3ms inference, 0.0ms loss, 0.8ms postprocess per image
+Results saved to /home/shon/PycharmProjects/tiger_watch/runs/detect/runs/train/tiger_watch_yolo-5
+```
+
 
 
