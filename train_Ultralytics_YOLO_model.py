@@ -50,7 +50,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--project",
-        default="runs/train",
+        default="train",
         help="Directory where training runs are saved.",
     )
     parser.add_argument(
