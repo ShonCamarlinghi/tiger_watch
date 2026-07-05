@@ -1,6 +1,6 @@
 task: detect
 mode: train
-model: yolov8n.pt
+model: yolo26n.pt
 data: /home/shon/Sandbox/datasets/YOLO_wildlife/dataset.yaml
 epochs: 100
 time: null
