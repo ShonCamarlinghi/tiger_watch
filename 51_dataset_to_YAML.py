@@ -15,11 +15,11 @@ if fo.dataset_exists(DATASET_NAME):
 else:
     dataset = foz.load_zoo_dataset(
         "open-images-v7",
-        split="validation",        # This keeps the sample count manageable on an RTX 4060 Ti.
+        split="validation",         # This keeps the sample count manageable on an RTX 4060 Ti.
         classes=CLASSES,
         label_types=["detections"],
         label_field="ground_truth",
-        max_samples=20000,
+        max_samples=20000,          # Set max samples to 20,000
         dataset_name=DATASET_NAME,
         persistent=True,
     )
@@ -29,7 +29,7 @@ else:
 dataset.untag_samples(dataset.distinct("tags"))
 
 # 3. Extract the list of valid class categories dynamically
-# access label field by assigned name label_field="ground_truth"
+# access the label field by assigned name label_field="ground_truth"
 class_list = dataset.distinct("ground_truth.detections.label")
 print(f"Discovered classes for YOLO: {class_list}")
 
@@ -52,7 +52,7 @@ for split in ("train", "val"):
         dataset_type=fo.types.YOLOv5Dataset,
         label_field="ground_truth",       # Must match step 3
         split=split,
-        classes=CLASSES,               # Enforces explicit class indexes
+        classes=CLASSES,                  # Enforces explicit class indexes (limited set)
         overwrite=(split == "train"),     # Clear stale files once, then add val
     )
 

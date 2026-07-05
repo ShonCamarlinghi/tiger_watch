@@ -22,7 +22,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model",
-        default="yolov8n.pt",
+        default="yolov26n.pt",
         help="Base model checkpoint or YAML architecture to train from.",
     )
     parser.add_argument(
