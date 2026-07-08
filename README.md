@@ -15,15 +15,16 @@ Success metric: detect class objects and correctly identify each with proper box
 
 Hardware: 
     - training: AMD Ryzen 7, NVIDIA RTX 4060ti
-    - deployment: NVIDIA Jetson AGX Xavier,  
-                  wifi adapter  
-                  Intel RealSense camera
+    - deployment: NVIDIA Jetson AGX Xavier 16,            
+                  Intel RealSense Depth Camera D435
 
-
-Dataset source : Open Images Dataset v7 from Google | https://storage.googleapis.com/openimages/web/download_v7.html  
-Dataset management: Voxel51 | https://docs.voxel51.com/index.html#
+Jetson SDK: JetPack 5.1.6 | [https://developer.nvidia.com/embedded/jetpack-sdk-516]  | only available for host Ubuntu version 20.04 or less (I installed 20.04 alongside my 24.04)
+RealSense SDK:  | [https://github.com/realsenseai/librealsense/releases#release-v2.58.1]  | [https://github.com/realsenseai/librealsense/blob/master/doc/installation_jetson.md]
+Dataset source : Open Images Dataset v7 from Google | [https://storage.googleapis.com/openimages/web/download_v7.html]  
+Dataset management: Voxel51 | [https://docs.voxel51.com/index.html#]
 
 ### SW Environment setup for model training
+Ubuntu 24.04 
 Venv setup in terminal  
 ```bash
 python -m venv .venv
