@@ -1,7 +1,27 @@
 #!/bin/bash
 
-LOG_FILE="jetson_yolo_setup.log"
-exec >>(tee -a "$LOG_FILE") 2>&1 
+##### NOTE for script run #######
+# Add below line to visudo for jetson username
+# nvidia ALL=(ALL:ALL) NOPASSWD:ALL
+
+LOG_DIR="./logs"
+LOG_FILE="./logs/jetson_yolo_setup.log"
+if [ ! -d "$LOG_DIR" ]; then
+	mkdir -p "$LOG_DIR"
+fi
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "Saving installation log for "$0" script in /logs/jetson_yolo_setup.log"
+echo "If you need to create SSH keys for github, enter your Github email here: "
+read GITHUB_EMAIL
+echo "Your github email is $GITHUB_EMAIL"
+
+########### Create SSH keys for github ##########################
+
+ssh-keygen -t ed25519 -C $GITHUB_EMAIL
+
+## add content of this line to SSH keys in your gihub
+echo "Add content of ~/.ssh/id_ed25519.pub to SSH keys in your Github"
+cat ~/.ssh/id_ed25519.pub
 
 
 ############ Maximize Hardware Power Performance  ####################
@@ -24,7 +44,7 @@ sudo apt-get update
 sudo apt-get install -y python3-pip
 
 # 2. Install jetson-stats globally
-sudo pip3 install jetson-stats
+sudo pip3 install -U jetson-stats
 
 # 3. Reboot the Jetson to initialize the jtop background system services
 sudo reboot
@@ -37,6 +57,8 @@ dpkg -l | grep nvinfer
 # 2. Check that the trtexec utility is present in the standard system path
 ls -la /usr/src/tensorrt/samples/trtexec
 
+# 3. Append alias in ~/.bashrc  to to run trtexec from any terminal location on jetson
+echo "alias trtexec=/usr/src/tensorrt/bin/trtexec" >> ~/.bashrc
 
 ###########  Python Virtual Environment ################################
 
@@ -85,5 +107,13 @@ pip install onnxruntime_gpu-1.17.0-cp38-cp38-linux_aarch64.whl
 
 pip install numpy==1.23.5
 
+
+########### Create SSH keys for github ##########################
+
+ssh-keygen -t ed25519 -C $GITHUB_EMAIL
+
+## add content of this line to SSH keys in your gihub
+echo "Add content of ~/.ssh/id_ed25519.pub to SSH keys in your Github"
+cat ~/.ssh/id_ed25519.pub
 
 
