@@ -2,7 +2,7 @@
 # Cascaded Edge-AI Wildlife & Pet Identification Pipeline
 
 Objective: A two-stage computer vision pipeline designed to detect birds, pets, snakes, bears and tigers.
-Application: outdoor camera application for homes located close to wilflife.
+Application: outdoor camera application for homes located close to wildlife.
 
 This supervised Machine Learning project bridges the gap between high-end desktop training (**NVIDIA RTX 4060ti**) 
 and resource-constrained edge deployment (**NVIDIA Jetson AGX Xavier**) using **TensorRT** optimization.
