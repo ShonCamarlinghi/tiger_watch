@@ -18,7 +18,7 @@ git clone https://github.com/IntelRealSense/librealsense.git
 cd librealsense/example/sample
 g++ -std=c++11 filename.cpp -lrealsense2
 ./a.out
-
+```
 4. Connect Intel RealSense Deapth camera (D435) to USB-C port on Jetson and check usb devices:
 ```
 nvidia@ubuntu:~/librealsense/tools$ lsusb
