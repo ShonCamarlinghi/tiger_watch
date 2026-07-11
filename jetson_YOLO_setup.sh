@@ -108,12 +108,5 @@ pip install onnxruntime_gpu-1.17.0-cp38-cp38-linux_aarch64.whl
 pip install numpy==1.23.5
 
 
-########### Create SSH keys for github ##########################
-
-ssh-keygen -t ed25519 -C $GITHUB_EMAIL
-
-## add content of this line to SSH keys in your gihub
-echo "Add content of ~/.ssh/id_ed25519.pub to SSH keys in your Github"
-cat ~/.ssh/id_ed25519.pub
 
 
