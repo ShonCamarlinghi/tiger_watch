@@ -35,4 +35,5 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 cd ~/librealsense/tools
 realsense-viewer
 ```
+https://github.com/ShonCamarlinghi/tiger_watch/issues/1#issue-4864595931
 
