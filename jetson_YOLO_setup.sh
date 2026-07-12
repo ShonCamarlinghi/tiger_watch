@@ -4,6 +4,7 @@
 # Add below line to visudo for jetson username
 # nvidia ALL=(ALL:ALL) NOPASSWD:ALL
 
+set -euo pipefail # Guard forces execution to halt immediately if any single underlying dependency install or compilation flag fails
 LOG_DIR="./logs"
 LOG_FILE="./logs/jetson_yolo_setup.log"
 if [ ! -d "$LOG_DIR" ]; then
@@ -11,17 +12,6 @@ if [ ! -d "$LOG_DIR" ]; then
 fi
 exec > >(tee -a "$LOG_FILE") 2>&1
 echo "Saving installation log for "$0" script in /logs/jetson_yolo_setup.log"
-echo "If you need to create SSH keys for github, enter your Github email here: "
-read GITHUB_EMAIL
-echo "Your github email is $GITHUB_EMAIL"
-
-########### Create SSH keys for github ##########################
-
-ssh-keygen -t ed25519 -C $GITHUB_EMAIL
-
-## add content of this line to SSH keys in your gihub
-echo "Add content of ~/.ssh/id_ed25519.pub to SSH keys in your Github"
-cat ~/.ssh/id_ed25519.pub
 
 
 ############ Maximize Hardware Power Performance  ####################
@@ -34,31 +24,6 @@ sudo jetson_clocks
 
 # 3. Verify the changes applied successfully
 sudo nvpmodel -q
-
-
-
-############  Install Hardware and System Profiling Tools  ############
-
-# 1. Update the system package manager and install pip
-sudo apt-get update
-sudo apt-get install -y python3-pip
-
-# 2. Install jetson-stats globally
-sudo pip3 install -U jetson-stats
-
-# 3. Reboot the Jetson to initialize the jtop background system services
-sudo reboot
-
-############  Verify the Native TensorRT Installation  #################
-
-# 1. Verify the installed TensorRT version
-dpkg -l | grep nvinfer
-
-# 2. Check that the trtexec utility is present in the standard system path
-ls -la /usr/src/tensorrt/samples/trtexec
-
-# 3. Append alias in ~/.bashrc  to to run trtexec from any terminal location on jetson
-echo "alias trtexec=/usr/src/tensorrt/bin/trtexec" >> ~/.bashrc
 
 ###########  Python Virtual Environment ################################
 
