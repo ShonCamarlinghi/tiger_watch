@@ -4,7 +4,7 @@
 Objective: A two-stage computer vision pipeline designed to detect birds, pets, snakes, bears and tigers.
 Application: outdoor camera application for homes located close to wildlife.
 
-This supervised Machine Learning project bridges the gap between high-end desktop training (**NVIDIA RTX 4060ti**) 
+This supervised Machine Learning project bridges the gap between training model on desktop GPU (NVIDIA RTX 4060ti) 
 and resource-constrained edge deployment (**NVIDIA Jetson AGX Xavier**) using **TensorRT** optimization.
 
 Computer Vision Task: object detection and classification of animals visible on porch camera connected to edge device (Jetson AGX), that send alarm if a bear or tiger detected!
@@ -30,7 +30,7 @@ Dataset management: Voxel51 | [https://docs.voxel51.com/index.html#]
 Benchmark reference: 
 [https://github.com/NVIDIA-AI-IOT/jetson_benchmarks/tree/master] | [https://github.com/mlcommons/inference_results_v3.1/tree/main/closed/NVIDIA]
 
-Setup SW on host PC with RTX GPU | Host.md
+- Setup SW on host PC with RTX GPU | Host.md
 
 - Provision Jetson | Jetson.md 
 
