@@ -5,10 +5,14 @@ import tensorrt as trt
 import pycuda.driver as cuda
 import pycuda.autoinit  # Automatically manages the CUDA context
 
-# 1. Setup TensorRT logger and execution runtime
+
 TRT_LOGGER = trt.Logger(trt.Logger.WARNING)
+# Define your custom dataset label names here
+#CLASS_NAMES = ["class_0", "class_1", "class_2"]  # Update with your custom classes
+CLASS_NAMES = ["Dog", "Cat", "Tiger", "Bird", "Snake", "Bear"]
+CONF_THRESHOLD = 0.25  # Confidence cutoff filter  , for step 3.  Initialize TensorRT assets
 
-
+# 1. Setup TensorRT logger and execution runtime
 def load_engine(engine_path):
     """Loads a serialized TensorRT engine file."""
     with open(engine_path, "rb") as f, trt.Runtime(TRT_LOGGER) as runtime:
@@ -50,9 +54,7 @@ engine = load_engine("best_model.engine")
 inputs, outputs, bindings, stream = allocate_buffers(engine)
 context = engine.create_execution_context()
 
-# Define your custom dataset label names here
-CLASS_NAMES = ["class_0", "class_1", "class_2"]  # Update with your custom classes
-CONF_THRESHOLD = 0.25  # Confidence cutoff filter
+
 
 try:
     while True:
