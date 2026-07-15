@@ -32,7 +32,7 @@ Setup SW on host PC with RTX GPU | Host.md
 
 Provision Jetson | Jetson.md 
 
-Provision Jetson with ultralytics pre-configured image: Jetson_Docker.md 
+Provision Jetson with ultralytics pre-configured image | Jetson_Docker.md 
   - Using docker also requires external SSD storage and docker configurations for it.  
 
 
