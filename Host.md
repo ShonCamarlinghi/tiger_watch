@@ -23,6 +23,8 @@ source .venv/bin/activate
 ```
 Run yolo check
 ```bash
+cd ~/tiger_watch
+yolo check
 ```
 Output:
 ```  
@@ -61,3 +63,4 @@ Inference sanity check
 ```bash
 yolo predict model=yolo26n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
+Fixed ONNX Shapes: YOLO export command must run with dynamic=False. TensorRT optimization engines on the Jetson platform rely heavily on rigid, static tensor memory allocations for peak execution throughput.
