@@ -28,23 +28,23 @@ Dataset management: Voxel51 | [https://docs.voxel51.com/index.html#]
 Benchmark reference: 
 [https://github.com/NVIDIA-AI-IOT/jetson_benchmarks/tree/master] | [https://github.com/mlcommons/inference_results_v3.1/tree/main/closed/NVIDIA]
 
-### Setup SW on host PC with RTX GPU
+##### Setup SW on host PC with RTX GPU
 Host.md
 
-### Setup SW on Jetson SDK 
+##### Provision Jetson
 Jetson.md 
 
 ##### if you prefer pre-configured ultralytics pre-configured image
 Using docker also requires external SSD storage and docker configurations for it.  
 Jetson_Docker.md 
 
-### Dataset prep: download and prepare dataset using FiftyOne.
+##### Dataset prep: download and prepare dataset using FiftyOne.
 Dataset_prep.md
 
-### Training Computer Vision model
+##### Training Computer Vision model
 Train_model.md
 
-### Export YOLO custom model to ONNX format for deployment on Jetson
+##### Export YOLO custom model to ONNX format for deployment on Jetson
 Convert_yolo_to_ONNX.md
 
 
