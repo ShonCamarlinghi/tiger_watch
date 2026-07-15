@@ -30,16 +30,15 @@ Benchmark reference:
 
 Setup SW on host PC with RTX GPU | Host.md
 
-Provision Jetson | Jetson.md 
+- Provision Jetson | Jetson.md 
 
-Provision Jetson with ultralytics pre-configured image | Jetson_Docker.md 
-  - Using docker also requires external SSD storage and docker configurations for it.  
+- Provision Jetson with ultralytics pre-configured image | Jetson_Docker.md 
+  Using docker also requires external SSD storage and docker configurations for it.  
 
+- Dataset prep: download and prepare dataset using FiftyOne | Dataset_prep.md
 
-Dataset prep: download and prepare dataset using FiftyOne | Dataset_prep.md
+- Training Computer Vision model | Train_model.md
 
-Training Computer Vision model | Train_model.md
-
-Export YOLO custom model to ONNX format for deployment on Jetson | Convert_yolo_to_ONNX.md
+- Export YOLO custom model to ONNX format for deployment on Jetson | Convert_yolo_to_ONNX.md
 
 
