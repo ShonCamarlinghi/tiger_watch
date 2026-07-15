@@ -7,7 +7,7 @@ Application: outdoor camera application for homes located close to wildlife.
 This supervised Machine Learning project bridges the gap between training model on desktop GPU (NVIDIA RTX 4060ti) 
 and resource-constrained edge deployment (**NVIDIA Jetson AGX Xavier**) using **TensorRT** optimization.
 
-Computer Vision Task: object detection and classification of animals visible on porch camera connected to edge device (Jetson AGX), that send alarm if a bear or tiger detected!
+Computer Vision Task: object detection and classification of animals visible on porch camera connected to edge device (Jetson AGX)
  
 Classes: "Dog", "Cat", "Tiger", "Bird", "Snake", "Bear".
 
