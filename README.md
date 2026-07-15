@@ -9,10 +9,10 @@ and resource-constrained edge deployment (**NVIDIA Jetson AGX Xavier**) using **
 
 Computer Vision Task: object detection and classification of animals visible on porch camera connected to edge device (Jetson AGX)
 
-<div align="center">
+<div align="left">
 <img width="80%" src="runs/train/tiger_watch_yolo/val_batch1_pred.jpg"/> 
 </div>
-
+ 
 Classes used in training model: "Dog", "Cat", "Tiger", "Bird", "Snake", "Bear".
 
 
@@ -20,7 +20,11 @@ Success metric: detect class objects and correctly identify each with proper box
 
 Hardware | training: AMD Ryzen 7, NVIDIA RTX 4060ti
   
-Hardware | deployment: NVIDIA Jetson AGX Xavier 16, Intel RealSense Depth Camera D435            
+Hardware | deployment: NVIDIA Jetson AGX Xavier 16, Intel RealSense Depth Camera D435        
+<div align="center">
+<img width="50%" src="msc/Jetson_realSense_setup.jpg"/>
+<img width="50%" src="msc/realsense_viewer_sanity_check.jpg"/>
+</div>
                   
 Jetson SDK: JetPack 5.1.6 | [https://developer.nvidia.com/embedded/jetpack-sdk-516] | only available for host Ubuntu version 20.04 or less (I installed 20.04 alongside my 24.04)
 
