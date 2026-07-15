@@ -32,18 +32,19 @@ Benchmark reference:
 Host.md
 
 ### Setup SW on Jetson SDK 
-Steps in Jetson.md 
+Jetson.md 
 
 ##### if you prefer pre-configured ultralytics pre-configured image
-Steps in Jetson_Docker.md that also requires external SSD storage and dockert configurations for it.  
+Using docker also requires external SSD storage and docker configurations for it.  
+Jetson_Docker.md 
 
 ### Dataset prep: download and prepare dataset using FiftyOne.
-Steps in Dataset_prep.md
+Dataset_prep.md
 
 ### Training Computer Vision model
-Steps in Train_model.md
+Train_model.md
 
 ### Export YOLO custom model to ONNX format for deployment on Jetson
-
+Convert_yolo_to_ONNX.md
 
 
