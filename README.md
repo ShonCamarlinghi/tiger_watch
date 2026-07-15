@@ -14,9 +14,11 @@ Classes: "Dog", "Cat", "Tiger", "Bird", "Snake", "Bear".
 Success metric: detect class objects and correctly identify each with proper box and class description.
 
 Hardware: 
-    - training: AMD Ryzen 7, NVIDIA RTX 4060ti
-    - deployment: NVIDIA Jetson AGX Xavier 16,            
-                  Intel RealSense Depth Camera D435
+
+  training: AMD Ryzen 7, NVIDIA RTX 4060ti
+  
+  deployment: NVIDIA Jetson AGX Xavier 16, Intel RealSense Depth Camera D435            
+                  
 
 Jetson SDK: JetPack 5.1.6 | [https://developer.nvidia.com/embedded/jetpack-sdk-516] | only available for host Ubuntu version 20.04 or less (I installed 20.04 alongside my 24.04)
 
